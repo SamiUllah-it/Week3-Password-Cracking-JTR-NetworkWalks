@@ -36,7 +36,7 @@ For Week 3 of my Networkwalks Cybersecurity Internship, the task was to take a p
 
 The PDF itself doesn't store the password in plain text anywhere, so before John the Ripper (or anything else) can attempt to guess it, you need something in a format the cracking tool understands. I used the online PDF Hash Extractor tool for this: uploaded `My Locked PDF1.pdf`, and it ran `pdf2john` behind the scenes to spit out a hash string starting with `$pdf$4*4*128*-1028*1*16*...`.
 
-![blank PDF Hash Extractor page](1787764256936_onlinehash.png)
+![blank PDF Hash Extractor page](onlinehash.png)
 
 ![PDF file selected and ready to upload](1787764256935_uploadfileonlinehash.png)
 
