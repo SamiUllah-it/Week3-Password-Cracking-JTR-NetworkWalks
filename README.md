@@ -38,39 +38,39 @@ The PDF itself doesn't store the password in plain text anywhere, so before John
 
 ![blank PDF Hash Extractor page](onlinehash.png)
 
-![PDF file selected and ready to upload](1787764256935_uploadfileonlinehash.png)
+![PDF file selected and ready to upload](uploadfileonlinehash.png)
 
 Once it finished processing, the tool returned the full hash in a text box on the page, which I selected and copied.
 
-![copying the generated hash](1787764256935_copyhash.png)
+![copying the generated hash](copyhash.png)
 
 ### Step 2 – Getting the hash somewhere Johnny could read it
 
 Johnny expects a file it can open, so I pasted the copied hash into a document and saved it, then dropped that into the working folder for this task alongside the rest of the lab files.
 
-![hash pasted into Word before saving](1787764277481_penhash1.png)
+![hash pasted into Word before saving](penhash1.png)
 
-![hash file placed in the working folder ready for Johnny](1787764256934_saveintoafolder.png)
+![hash file placed in the working folder ready for Johnny](saveintoafolder.png)
 
 ### Step 3 – Pointing Johnny at the John the Ripper executable
 
 Before Johnny can run anything, it needs to know where the actual `john.exe` binary lives on disk. Under Settings I set the path to the jumbo build I'd downloaded and Johnny confirmed it had detected John the Ripper 1.9.0-jumbo-1.
 
-![setting the John the Ripper executable path inside Johnny](1787764427454_setpathinjohnny.png)
+![setting the John the Ripper executable path inside Johnny](setpathinjohnny.png)
 
 ### Step 4 – Loading the hash and kicking off the attack
 
 From there it was a case of opening the password file I'd saved earlier through Johnny's "Open password file" option, confirming it picked up the hash correctly (format showed as PDF), and starting a new attack session.
 
-![opening the saved hash file inside Johnny](1787764256933_openpasswordfile.png)
+![opening the saved hash file inside Johnny](openpasswordfile.png)
 
-![starting the attack in Johnny](1787764277480_startnewattack.png)
+![starting the attack in Johnny](startnewattack.png)
 
 ### Step 5 – Result
 
 It didn't take long for Johnny to come back with a match. The status bar read `100% (1/1: 1 cracked, 0 left) [format=PDF]` and the recovered password showed up as **`good-luck`**.
 
-![Johnny reporting the password has been cracked](1787764277478_crackpassword.png)
+![Johnny reporting the password has been cracked](crackpassword.png)
 
 ### Step 6 – Confirming it actually works
 
@@ -80,9 +80,9 @@ A cracked password on screen doesn't mean much until you've actually used it, so
 nw{cybersecurity_flag_captured_2608}
 ```
 
-![entering the recovered password into the PDF prompt](1787764277480_password.png)
+![entering the recovered password into the PDF prompt](password.png)
 
-![PDF unlocked with the password recovered by John the Ripper](1787764277479_openfile.png)
+![PDF unlocked with the password recovered by John the Ripper](openfile.png)
 
 ## Route 2: Networkwalks' own browser based tools
 
@@ -92,17 +92,17 @@ Wanting to see how this same process looks without installing anything, I repeat
 
 The lab task page provided the same locked PDF as a download, so I grabbed a fresh copy from there to work with.
 
-![downloading the locked PDF from the Networkwalks lab page](1787764486098_downloadfile.png)
+![downloading the locked PDF from the Networkwalks lab page](downloadfile.png)
 
 ### Step 2 – Extracting the hash with the Hash Calculator
 
 The Hash Calculator tool has a dedicated PDF tab that reads the file locally in the browser (nothing gets uploaded to a server) and pulls out the same style of `$pdf$` hash that `pdf2john` produces.
 
-![Hash Calculator homepage before uploading](1787764486098_hashcalculaor.png)
+![Hash Calculator homepage before uploading](hashcalculaor.png)
 
-![uploading this copy of the PDF into the Networkwalks Hash Calculator](1787764486097_uploadfile.png)
+![uploading this copy of the PDF into the Networkwalks Hash Calculator](uploadfile.png)
 
-![the Hash Calculator generating the crackable PDF hash](1787764486096_copyhash.png)
+![the Hash Calculator generating the crackable PDF hash](copyhash.png)
 
 The tool confirmed the file was encrypted and handed back the hash along with some useful metadata: revision R4, version V4, 128-bit key length.
 
@@ -110,13 +110,13 @@ The tool confirmed the file was encrypted and handed back the hash along with so
 
 The Password Cracker page is built around the same logic John the Ripper uses: hash every candidate word from a list and compare it against the target hash until something matches. I pasted the hash from the calculator straight into the input box.
 
-![Password Cracker page before pasting the hash](1787764486096_openpasswordcracker.png)
+![Password Cracker page before pasting the hash](openpasswordcracker.png)
 
-![pasting the extracted hash into the Password Cracker tool](1787764486095_pastethehash.png)
+![pasting the extracted hash into the Password Cracker tool](pastethehash.png)
 
 By default the tool comes with a built-in list of 100 common passwords, but I also tried swapping in a proper wordlist to see the option in action.
 
-![loading a custom wordlist into the cracker](1787764486095_wordlist.png)
+![loading a custom wordlist into the cracker](wordlist.png)
 
 ### Step 4 – Watching the attack run
 
@@ -126,7 +126,7 @@ Once I hit start, the tool worked through the list in real time, skipping commen
 [+] MATCH password1 ✓
 ```
 
-![Password Cracker successfully matching the hash](1787764486094_crackpassword.png)
+![Password Cracker successfully matching the hash](crackpassword.png)
 
 The recovered password this time was **`password1`**, different from the one John the Ripper found, since this was a separate copy of the sample file with its own hash and password set for the browser based lab.
 
@@ -134,7 +134,7 @@ The recovered password this time was **`password1`**, different from the one Joh
 
 Same as before, the real test was opening the PDF with the recovered password to make sure it wasn't a false positive.
 
-![entering the recovered password into this copy's PDF prompt](1787764486093_openfile_enterpassword.png)
+![entering the recovered password into this copy's PDF prompt](openfile_enterpassword.png)
 
 It opened without issue and revealed the second flag:
 
@@ -142,7 +142,7 @@ It opened without issue and revealed the second flag:
 nw{networkwalks_flag1_jtr_270521_1}
 ```
 
-![second flag revealed after unlocking the file](1787764486092_finalcrack.png)
+![second flag revealed after unlocking the file](finalcrack.png)
 
 ## What actually stuck with me
 
