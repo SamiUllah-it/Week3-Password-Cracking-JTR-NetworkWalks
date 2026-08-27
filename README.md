@@ -1,4 +1,4 @@
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen) ![Module](https://img.shields.io/badge/Module-W3--PM2-blue) ![Scope](https://img.shields.io/badge/Scope-Authorized%20Only-orange) ![Methods](https://img.shields.io/badge/Methods-2%2F2%20Completed-9cf) ![Flags](https://img.shields.io/badge/Flags-2%2F2%20Captured-brightgreen) ![Tools Used](https://img.shields.io/badge/Tools%20Used-6-lightgrey)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen) ![Module](https://img.shields.io/badge/Module-W3--PM1-blue) ![Module](https://img.shields.io/badge/Module-W3--PM2-blue) ![Scope](https://img.shields.io/badge/Scope-Authorized%20Only-orange) ![Methods](https://img.shields.io/badge/Methods-2%2F2%20Completed-9cf) ![Flags](https://img.shields.io/badge/Flags-2%2F2%20Captured-brightgreen) ![Tools Used](https://img.shields.io/badge/Tools%20Used-6-lightgrey)
 
 ### W3-PM2 | CYBERSECURITY | NETWORKWALKS ACADEMY
 
