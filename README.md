@@ -136,7 +136,7 @@ The recovered password this time was **`password1`**, different from the one Joh
 
 Same as before, the real test was opening the PDF with the recovered password to make sure it wasn't a false positive.
 
-![entering the recovered password into this copy's PDF prompt](openfile_enterpassword.png)
+![entering the recovered password into this copy's PDF prompt](openfile&enterpassword.png)
 
 It opened without issue and revealed the second flag:
 
